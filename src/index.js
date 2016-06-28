@@ -1,6 +1,6 @@
 function Match() {
   return {
-    name: () => 'match',
+    name: 'match',
   };
 }
 

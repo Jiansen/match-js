@@ -12,12 +12,12 @@ var lib;
 
 describe('Given an instance of my library', function () {
   before(function () {
-    console.log(Match);
-    lib = Match.default;
+    lib = Match.default();
   });
   describe('when I need the name', function () {
-    it('should return the name', () => {
-      expect(lib.name).to.be.equal('Match');
+    it('should return the name match', () => {
+      console.log(lib.name);
+      expect(lib.name).to.be.equal('match');
     });
   });
 });
