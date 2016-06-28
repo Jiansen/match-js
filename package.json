@@ -1,0 +1,42 @@
+{
+  "name": "match",
+  "version": "0.1.0",
+  "description": "Patten matching via extractor objects in JavaScript",
+  "main": "lib/match.min.js",
+  "scripts": {
+    "build": "webpack --mode=build",
+    "dev": "webpack --progress --colors --watch --mode=dev",
+    "test_old": "mocha --compilers js:babel-core/register --colors -w ./test/*.spec.js",
+    "test": "mocha-webpack --webpack-config webpack.config-test.js \"test/**/*.spec.js\""
+  },
+  "devDependencies": {
+    "babel": "^6.3.13",
+    "babel-core": "^6.1.18",
+    "babel-loader": "^6.1.0",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-preset-es2015": "^6.9.0",
+    "chai": "^3.4.1",
+    "mocha": "^2.5.3",
+    "mocha-webpack": "^0.4.0",
+    "webpack": "^1.13.1",
+    "webpack-node-externals": "^1.2.0",
+    "yargs": "^3.32.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jiansen/match.js.git"
+  },
+  "keywords": [
+    "pattern matching",
+    "extractor objects",
+    "library",
+    "universal",
+    "commonjs"
+  ],
+  "author": "Jiansen HE",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jiansen/match.js/issues"
+  },
+  "homepage": "https://github.com/Jiansen/match.js"
+}
