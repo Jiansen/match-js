@@ -32,6 +32,10 @@ describe('Matching on class contructor', function () {
       this.value = x*2;
     }
     unapply(x) {
+      if (x instanceof Twice && x.value%2 ==0) {
+        return x.value / 2
+      }
+
       if( x%2 ==0 ) {
         return x/2;
       }else{
@@ -52,7 +56,7 @@ describe('Matching on class contructor', function () {
   describe('Twice(5)', function () {
     it('should match Twice(5)', () => {
         const twice5 = new Twice(5);
-        const m = match(10)([
+        const m = match(twice5)([
           [1, "ONE"],
           [2, "TWO"],
           [Twice, (x) => x],
