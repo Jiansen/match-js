@@ -1,11 +1,11 @@
-var chai = require('chai');
-var Match = require('../lib/match.js');
+import chai from 'chai';
+import Match from '../lib/match.js';
 
 chai.expect();
 
-var expect = chai.expect;
+const expect = chai.expect;
 
-var lib;
+let lib;
 
 describe('Given an instance of my library', function () {
   before(function () {

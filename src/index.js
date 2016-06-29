@@ -1,7 +1,5 @@
-function Match() {
-  return {
-    name: 'match',
-  };
+const Match = {
+    libname: 'match',
 }
 
 export default Match;
