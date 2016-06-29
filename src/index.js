@@ -8,9 +8,13 @@ const primitivePatternHandler = (exp, [pattern, block]) => {
 const handlerByPatternType = {
   'string': primitivePatternHandler,
   'number': primitivePatternHandler,
+  'boolean': primitivePatternHandler,
   'function': (exp, [pattern, block]) => {
     if ('unapply' in pattern.prototype) {
-      return block(pattern.prototype.unapply(exp));
+      const extractObj = pattern.prototype.unapply(exp);
+      if (extractObj != undefined) {
+        return block(extractObj);
+      }
     }
     return undefined;
   }
@@ -23,7 +27,6 @@ const match = exp => patterns => {
       return optionPrimitiveResult;
     }
   };
-
   return undefined;
 }
 
