@@ -1,6 +1,6 @@
-const primitivePatternHandler = (exp, pattern) => {
-  if(pattern[0] === exp) {
-    return pattern[1];
+const primitivePatternHandler = (exp, [pattern, block]) => {
+  if(pattern === exp) {
+    return block;
   }
   return undefined;
 }
@@ -8,17 +8,17 @@ const primitivePatternHandler = (exp, pattern) => {
 const handlerByPatternType = {
   'string': primitivePatternHandler,
   'number': primitivePatternHandler,
-  'function': (exp, pattern) => {
-    if ('unapply' in pattern[0].prototype) {
-      return pattern[1](pattern[0].prototype.unapply(exp));
+  'function': (exp, [pattern, block]) => {
+    if ('unapply' in pattern.prototype) {
+      return block(pattern.prototype.unapply(exp));
     }
     return undefined;
   }
 }
 
 const match = exp => patterns => {
-  for (const pattern of patterns) {
-    const optionPrimitiveResult = handlerByPatternType[typeof pattern[0]](exp, pattern);
+  for (const [pattern, block] of patterns) {
+    const optionPrimitiveResult = handlerByPatternType[typeof pattern](exp, [pattern, block]);
     if (optionPrimitiveResult != undefined) {
       return optionPrimitiveResult;
     }
