@@ -1,6 +1,3 @@
-// import chai from 'chai';
-// import Match from '../lib/match.js';
-
 var chai = require('chai');
 var Match = require('../lib/match.js');
 

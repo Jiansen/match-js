@@ -6,8 +6,8 @@
   "scripts": {
     "build": "webpack --mode=build",
     "dev": "webpack --progress --colors --watch --mode=dev",
-    "test_old": "mocha --compilers js:babel-core/register --colors -w ./test/*.spec.js",
-    "test": "mocha-webpack --webpack-config webpack.config-test.js \"test/**/*.spec.js\""
+    "test:es6": "./node_modules/.bin/mocha --compilers js:babel-core/register --colors -w ./test/*.spec.es6.js",
+    "test": "mocha-webpack \"test/**/*.spec.js\""
   },
   "devDependencies": {
     "babel": "^6.3.13",
