@@ -1,19 +1,27 @@
 import chai from 'chai';
-import Match from '../lib/match.js';
+import match from '../lib/match.js';
 
 chai.expect();
-
 const expect = chai.expect;
 
-let lib;
-
-describe('Given an instance of my library', function () {
-  before(function () {
-    lib = Match;
-  });
-  describe('when I need the name', function () {
-    it('should return the name match', () => {
-      expect(lib.libname).to.be.equal('match');
+describe('Matching on build-in primitive types', function () {
+  describe('Integer value', function () {
+    it('should match the same value', () => {
+        const m = match(1)({
+            1: "ONE",
+            2: "TWO"
+        })
+        expect(m).to.be.equal('ONE');
     });
+  });
+  describe('Integer veriable', function () {
+      it('should match the same value', () => {
+          const twoVar = 2;
+          const n = match(twoVar)({
+              1: "ONE",
+              2: "TWO"
+          })
+          expect(n).to.be.equal('TWO');
+      });
   });
 });
