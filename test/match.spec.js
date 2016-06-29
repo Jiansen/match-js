@@ -1,19 +1,27 @@
 var chai = require('chai');
-var Match = require('../lib/match.js');
+var match = require('../lib/match.js');
 
 chai.expect();
-
 var expect = chai.expect;
 
-var lib;
-
-describe('Given an instance of my library', function () {
-  before(function () {
-    lib = Match;
-  });
-  describe('when I need the name', function () {
-    it('should return the name match', () => {
-      expect(lib.libname).to.be.equal('match');
+describe('Matching on build-in primitive types', function () {
+  describe('Integer value', function () {
+    it('should match the same value', () => {
+        var m = match(1)({
+            1: "ONE",
+            2: "TWO"
+        })
+        expect(m).to.be.equal('ONE');
     });
+  });
+  describe('Integer veriable', function () {
+      it('should match the same value', () => {
+          var twoVar = 2;
+          var m = match(twoVar)({
+              1: "ONE",
+              2: "TWO"
+          })
+          expect(m).to.be.equal('TWO');
+      });
   });
 });
