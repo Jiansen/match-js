@@ -44,6 +44,7 @@ describe('Matching on class contructor: Twice', function () {
   class Twice {
     constructor(x) {
       this.value = x*2;
+      this.funny_prop = 'funny';
     }
     unapply(x) {
       if (x instanceof Twice && x.value%2 ==0) {
@@ -74,6 +75,24 @@ describe('Matching on class contructor: Twice', function () {
         [Twice, (x) => x],
       ])
       expect(m).to.be.equal(5);
+  });
+  it('Twice(6) should match Twice(x), where x is assigned to 6', () => {
+      const twice6 = new Twice(6);
+      const m = match(twice6)([
+        [1, "ONE"],
+        [new Twice(6), "Twice(6)"],
+        [Twice, (x) => x],
+      ])
+      expect(m).to.be.equal("Twice(6)");
+  });
+  it('Twice(6) should match {value: 12}, where x is assigned to 6', () => {
+      const twice6 = new Twice(6);
+      const m = match(twice6)([
+        [1, "ONE"],
+        [{value: 12}, "Twice(6) matches {value:12}"],
+        [Twice, (x) => x],
+      ])
+      expect(m).to.be.equal("Twice(6) matches {value:12}");
   });
 });
 
