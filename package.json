@@ -8,6 +8,7 @@
     "commit": "git-cz",
     "dev": "webpack --progress --colors --watch --mode=dev",
     "dev:single": "webpack --progress --colors --mode=dev",
+    "test": "npm run test:signle",
     "test:single": "npm run dev:single && npm run test:single:es5 && npm run test:single:es6",
     "test:es5": "eslint ./test/*.spec.es5.js && mocha --colors --watch ./test/*.spec.es5.js",
     "test:single:es5": "eslint ./test/*.spec.es5.js && mocha --colors ./test/*.spec.es5.js",
