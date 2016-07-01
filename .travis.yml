@@ -1,4 +1,4 @@
-sudo: false
+sudo: true
 language: node_js
 cache:
   directories:
@@ -7,7 +7,6 @@ notifications:
   email: false
 node_js:
   - '6.2'
-sudo: true
 before_install:
   - npm i -g npm@^3.10.3
   - sudo apt-get install libgnome-keyring-dev
@@ -18,3 +17,11 @@ after_success:
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
+env:
+  - CXX=g++-4.8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
