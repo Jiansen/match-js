@@ -18,3 +18,4 @@ branches:
     - /^v\d+\.\d+\.\d+$/
 packages:
   - libgnome-keyring-dev
+  - gnome-keyring-1
