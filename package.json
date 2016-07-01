@@ -1,5 +1,5 @@
 {
-  "name": "match.js",
+  "name": "match",
   "description": "Patten matching via extractor objects in JavaScript",
   "main": "lib/match.min.js",
   "scripts": {
