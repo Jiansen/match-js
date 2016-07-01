@@ -57,3 +57,22 @@ ES6 source files
 * `npm run dev` - produces development version of your library and runs a watcher
 * `npm run test` - runs the tests written in plain (*.spec.js)
 * `npm run test:es6` - runs the tests written in ES6 (*.spec.es6.js)
+
+
+## Release with semantic-release
+* Run `./node_modules/.bin/semantic-release-cli setup` if haven't done in your working machine before.
+* Release is triggered when run `git push` to master.
+### Patch Release
+```
+fix(pencil): stop graphite breaking when too much pressure applied
+```
+### ~~Minor~~ Feature Release
+```
+feat(pencil): add 'graphiteWidth' option
+```
+### ~~Major~~ Breaking Release
+```
+perf(pencil): remove graphiteWidth option
+
+BREAKING CHANGE: The graphiteWidth option has been removed. The default graphite width of 10mm is always used for performance reason.
+```

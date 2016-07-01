@@ -1,13 +1,13 @@
 {
   "name": "match.js",
-  "version": "0.1.0",
   "description": "Patten matching via extractor objects in JavaScript",
   "main": "lib/match.min.js",
   "scripts": {
     "build": "webpack --mode=build",
     "dev": "webpack --progress --colors --watch --mode=dev",
     "test:es5": "eslint ./test/*.spec.es5.js && mocha --colors --watch ./test/*.spec.es5.js",
-    "test:es6": "mocha --compilers js:babel-core/register --colors --watch ./test/*.spec.es6.js"
+    "test:es6": "mocha --compilers js:babel-core/register --colors --watch ./test/*.spec.es6.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "devDependencies": {
     "babel": "^6.3.13",
@@ -22,7 +22,8 @@
     "semantic-release-cli": "^1.4.1",
     "webpack": "^1.13.1",
     "webpack-node-externals": "^1.2.0",
-    "yargs": "^3.32.0"
+    "yargs": "^3.32.0",
+    "semantic-release": "^4.3.5"
   },
   "repository": {
     "type": "git",
