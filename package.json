@@ -1,12 +1,18 @@
 {
   "name": "match",
+  "version": "0.0.0-semantic-release",
   "description": "Patten matching via extractor objects in JavaScript",
   "main": "lib/match.min.js",
   "scripts": {
     "build": "webpack --mode=build",
+    "commit": "git-cz",
     "dev": "webpack --progress --colors --watch --mode=dev",
+    "dev:single": "webpack --progress --colors --mode=dev",
+    "test:single": "npm run dev:single && npm run test:single:es5 && npm run test:single:es6",
     "test:es5": "eslint ./test/*.spec.es5.js && mocha --colors --watch ./test/*.spec.es5.js",
+    "test:single:es5": "eslint ./test/*.spec.es5.js && mocha --colors ./test/*.spec.es5.js",
     "test:es6": "mocha --compilers js:babel-core/register --colors --watch ./test/*.spec.es6.js",
+    "test:single:es6": "mocha --compilers js:babel-core/register --colors ./test/*.spec.es6.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "devDependencies": {
@@ -16,14 +22,16 @@
     "babel-plugin-add-module-exports": "^0.1.2",
     "babel-preset-es2015": "^6.9.0",
     "chai": "^3.4.1",
+    "commitizen": "^2.8.2",
+    "cz-conventional-changelog": "^1.1.6",
     "eslint": "^2.13.1",
     "mocha": "^2.5.3",
     "mocha-webpack": "^0.4.0",
+    "semantic-release": "^4.3.5",
     "semantic-release-cli": "^1.4.1",
     "webpack": "^1.13.1",
     "webpack-node-externals": "^1.2.0",
-    "yargs": "^3.32.0",
-    "semantic-release": "^4.3.5"
+    "yargs": "^3.32.0"
   },
   "repository": {
     "type": "git",
@@ -41,5 +49,10 @@
   "bugs": {
     "url": "https://github.com/Jiansen/match/issues"
   },
-  "homepage": "https://github.com/Jiansen/match"
+  "homepage": "https://github.com/Jiansen/match",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }

@@ -1,4 +1,13 @@
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![Build Status][build]][build-link]
+[![semantic-release][semantic-image]][semantic-url]
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
+[build]: https://api.travis-ci.org/Jiansen/match.js.svg?branch=master
+[build-link]: https://travis-ci.org/Jiansen/match.js
+[semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+[semantic-url]: https://github.com/semantic-release/semantic-release
+
+
 
 # match
 Patten matching via extractor objects in JavaScript
