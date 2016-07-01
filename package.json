@@ -19,6 +19,7 @@
     "eslint": "^2.13.1",
     "mocha": "^2.5.3",
     "mocha-webpack": "^0.4.0",
+    "semantic-release-cli": "^1.4.1",
     "webpack": "^1.13.1",
     "webpack-node-externals": "^1.2.0",
     "yargs": "^3.32.0"
