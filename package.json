@@ -2,7 +2,7 @@
   "name": "match-js",
   "version": "0.0.0-semantic-release",
   "description": "Patten matching via extractor objects in JavaScript",
-  "main": "lib/match-js.min.js",
+  "main": "./lib/match-js.min.js",
   "scripts": {
     "build": "webpack --mode=build",
     "commit": "git-cz",
