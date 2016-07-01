@@ -2,13 +2,12 @@
   "name": "match-js",
   "version": "0.0.0-semantic-release",
   "description": "Patten matching via extractor objects in JavaScript",
-  "main": "lib/match.min.js",
+  "main": "lib/match-js.min.js",
   "scripts": {
     "build": "webpack --mode=build",
     "commit": "git-cz",
     "dev": "webpack --progress --colors --watch --mode=dev",
     "dev:single": "webpack --progress --colors --mode=dev",
-    "test": "npm run test:single",
     "test:single": "npm run dev:single && npm run test:single:es5 && npm run test:single:es6",
     "test:es5": "eslint ./test/*.spec.es5.js && mocha --colors --watch ./test/*.spec.es5.js",
     "test:single:es5": "eslint ./test/*.spec.es5.js && mocha --colors ./test/*.spec.es5.js",
@@ -36,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Jiansen/match.git"
+    "url": "https://github.com/Jiansen/match-js.git"
   },
   "keywords": [
     "pattern matching",
@@ -48,9 +47,9 @@
   "author": "Jiansen HE",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Jiansen/match/issues"
+    "url": "https://github.com/Jiansen/match-js/issues"
   },
-  "homepage": "https://github.com/Jiansen/match",
+  "homepage": "https://github.com/Jiansen/match-js",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
