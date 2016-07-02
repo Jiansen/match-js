@@ -70,7 +70,7 @@ ES6 source files
 
 ## Release with semantic-release
 * Run `./node_modules/.bin/semantic-release-cli setup` if haven't done in your working machine before.
-* Release is triggered when run `git push` to master.
+* Release is triggered when run `npm run commit` to master with any of the following commit messages.
 ### Patch Release
 ```
 fix(pencil): stop graphite breaking when too much pressure applied
