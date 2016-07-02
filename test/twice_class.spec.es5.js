@@ -16,7 +16,7 @@ object TwiceTest extends App {
 */
 
 var chai = require('chai');
-var match = require('../lib/match-js');
+var match = require('../lib/match-js').match;
 
 chai.expect();
 var expect = chai.expect;

@@ -16,7 +16,7 @@ object TwiceTest extends App {
 */
 
 import chai from 'chai';
-import match from '../lib/match-js';
+import { match }from '../lib/match-js';
 
 chai.expect();
 const expect = chai.expect;
