@@ -19,7 +19,7 @@ TODO: documents will be in the [docs](./docs) folder.
 ### Plan
 - To simplify the syntax/APIs, in ES6, ES5, and some JavaScript derived languages.  If you would like to use match-js in you favourite language, please open an [issue](https://github.com/Jiansen/match-js/issues).
 - To support more types of patterns and usage cases.  To request a feature, open an [issue](https://github.com/Jiansen/match-js/issues) and give a snippet of the code in your mind.  As library designers, we'd like to see how you wanted to write code. The code snippet does not have to be executable (for now).
-- To refactor some small to medium sized libraries/applications using match-js, see if this library may contribute to better code.  If you have an candidate library/application in mind, please give it a go, and create a pull request to add your examples in the [Standalone Examples](# Standalone Examples) Section.
+- To refactor some small to medium sized libraries/applications using match-js, see if this library may contribute to better code.  If you have an candidate library/application in mind, please give it a go, and create a pull request to add your examples in the [Standalone Examples](#standalone-examples) Section.
 
 ## Examples
 ### Basic Usage
