@@ -1,1 +1,6 @@
 .tmp
+.babelrc
+.czrc
+.npmignore
+.travis.yml
+webpack.config.js
