@@ -9,15 +9,40 @@
 
 
 
-# match
+# match-js
 Patten matching via extractor objects in JavaScript
+
+
 
 ## Documents & Notes
 
-See the [docs](./docs) folder
+TODO: the [docs](./docs) folder
 
 ## Examples
-TODO:
+### Basic Usage
+Initial Project
+```
+$ npm init
+$ npm install --save match-js
+```
+Create index.js
+```
+var match = require('match-js');
+
+var two = 2;
+var m = match(two)(
+  [1, "ONE"],
+  [2, "TWO"]
+);
+console.log(m);
+```
+
+### More Examples
+See *.spec.es6.js files in the [test](./test) folder.
+
+**Note:**
+If you are interested in pattern matching/
+
 
 ## Related Work
 
