@@ -63,13 +63,13 @@ describe('Matching on Algebraic Data Type: An Calculator', function () {
   }
 
   var evaluate = function evaluate(exp) {
-    return match(exp)([
+    return match(exp)(
       [Add, function(arr) { return evaluate(arr[0])+evaluate(arr[1]); }],
       [Min, function(arr) { return evaluate(arr[0])-evaluate(arr[1]); }],
       [Mul, function(arr) { return evaluate(arr[0])*evaluate(arr[1]); }],
       [Div, function(arr) { return evaluate(arr[0])/evaluate(arr[1]); }],
-      [Number, function(x) { return x}],
-    ])
+      [Number, function(x) { return x}]
+    )
   };
 
   it('evaluate(5) should eval to 5', function() {

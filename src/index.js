@@ -71,7 +71,7 @@ const handlerByPatternType = {
   },
 }
 
-const match = exp => patterns => {
+const match = exp => (...patterns) => {
   for (const [pattern, block] of patterns) {
     const optionPrimitiveResult = handlerByPatternType[typeof pattern](exp, [pattern, block]);
     if (optionPrimitiveResult != undefined) {

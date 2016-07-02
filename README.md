@@ -64,7 +64,7 @@ ES6 source files
 ### Scripts
 * `npm run build` - produces production version of your library under the `lib` folder
 * `npm run dev` - produces development version of your library and runs a watcher
-* `npm run test` - runs the tests written in plain (*.spec.js)
+* `npm run test:es5` - runs the tests written in ES5 (*.spec.est5:js)
 * `npm run test:es6` - runs the tests written in ES6 (*.spec.es6.js)
 
 

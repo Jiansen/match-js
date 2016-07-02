@@ -52,13 +52,13 @@ describe('Matching on Algebraic Data Type: An Calculator', function () {
     }
   }
 
-  const evaluate = (exp) => match(exp)([
+  const evaluate = (exp) => match(exp)(
       [Add, ([x, y])=> evaluate(x)+evaluate(y)],
       [Min, ([x, y])=> evaluate(x)-evaluate(y)],
       [Mul, ([x, y])=> evaluate(x)*evaluate(y)],
       [Div, ([x, y])=> evaluate(x)/evaluate(y)],
-      [Number, (x) => x],
-    ]);
+      [Number, (x) => x]
+    );
 
   it('evaluate(5) should eval to 5', () => {
       expect(evaluate(5)).to.be.equal(5);
