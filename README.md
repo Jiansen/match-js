@@ -32,12 +32,11 @@ Create index.js
 ```
 var match = require('match-js');
 
-var two = 2;
-var m = match(two)(
-  [1, "ONE"],
-  [2, "TWO"]
-);
-console.log(m);
+var m = match(1)(
+  ['1', "String ONE"],
+  [1, "Integer ONE"]
+)
+console.log(m); // "Integer ONE"
 ```
 
 ### More Examples
