@@ -28,15 +28,15 @@ Initial Project
 $ npm init
 $ npm install --save match-js
 ```
-Create index.js
+ES6 Example
 ```
-var match = require('match-js');
+import { match } from 'match-js';
 
-var m = match(1)(
+const m = match(1)(
   ['1', "String ONE"],
   [1, "Integer ONE"]
 )
-console.log(m); // "Integer ONE"
+console.log(m); // Integer ONE
 ```
 
 ### More Examples
