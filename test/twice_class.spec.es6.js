@@ -12,7 +12,7 @@ object TwiceTest extends App {
   val x = Twice(21)
   x match { case Twice(n) => Console.println(n) } // prints 21
 }
-``
+```
 */
 
 import chai from 'chai';

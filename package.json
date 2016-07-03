@@ -8,11 +8,14 @@
     "commit": "git-cz",
     "dev": "webpack --progress --colors --watch --mode=dev",
     "dev:single": "webpack --progress --colors --mode=dev",
-    "test:single": "npm run dev:single && npm run test:single:es5 && npm run test:single:es6",
+    "test:single": "npm run dev:single && npm run test:single:es5 && npm run test:single:es6 && npm run test:single:coffee",
     "test:es5": "eslint ./test/*.spec.es5.js && mocha --colors --watch ./test/*.spec.es5.js",
-    "test:single:es5": "eslint ./test/*.spec.es5.js && mocha --colors ./test/*.spec.es5.js",
     "test:es6": "mocha --compilers js:babel-core/register --colors --watch ./test/*.spec.es6.js",
+    "_test:coffee": "coffee --compile --output ./coffee-test/ ./test/*.spec.coffee && mocha --colors --watch ./coffee-test/*.spec.js",
+    "test:coffee": "mocha --compilers coffee:coffee-script/register --colors --watch ./test/*.spec.coffee",
+    "test:single:es5": "eslint ./test/*.spec.es5.js && mocha --colors ./test/*.spec.es5.js",
     "test:single:es6": "mocha --compilers js:babel-core/register --colors ./test/*.spec.es6.js",
+    "test:single:coffee": "mocha --compilers coffee:coffee-script/register --colors ./test/*.spec.coffee",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "devDependencies": {
