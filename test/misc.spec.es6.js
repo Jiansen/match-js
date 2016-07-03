@@ -1,5 +1,5 @@
 import chai from 'chai';
-import {_, id, match} from '../lib/match-js';
+import {_, otherwise, id, match} from '../lib/match-js';
 
 chai.expect();
 const expect = chai.expect;
@@ -22,14 +22,23 @@ describe('Miscellaneous useages', function () {
     )
     expect(m).to.be.equal('Match 1 2 3');
   });
-  it('default pattern that matches everything', () => {
+  it('default pattern (_) that matches everything', () => {
     const i = 3;
     const m = match(i)(
       [1, "ONE"],
       [2, "TOW"],
-      [_, ()=>"ANY is "+i+""]
+      [_, ()=>"_ matches "+i]
     )
-    expect(m).to.be.equal('ANY is 3');
+    expect(m).to.be.equal('_ matches 3');
+  });
+  it('default pattern (otherwise) that matches everything', () => {
+    const i = 3;
+    const m = match(i)(
+      [1, "ONE"],
+      [2, "TOW"],
+      [otherwise, ()=>"otherwise matches "+i+""]
+    )
+    expect(m).to.be.equal('otherwise matches 3');
   });
   it('id functions returns the same input value', () => {
     const x = 10;

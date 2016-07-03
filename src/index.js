@@ -97,9 +97,11 @@ const _ = {
     return null;
   }
 }
+const otherwise = _
 const id = (x) => x
 export default {
   match,
   _,
+  otherwise,
   id,
 }
