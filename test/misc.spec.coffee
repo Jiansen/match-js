@@ -10,10 +10,9 @@ expect = chai.expect
 
 describe 'Miscellaneous useages', ->
   it 'execute statements should be allowed', ->
-    tenfun = ->"TEN"
     m = match(10)(
       [1, "ONE"],
-      [10, tenfun, null]
+      [10, ( ->"TEN"), null]
     )
     expect(m).to.be.equal 'TEN'
 
