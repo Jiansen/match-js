@@ -1,4 +1,6 @@
 [![Build Status][build]][build-link]
+[![Dependency Status](https://david-dm.org/jiansen/match-js.svg)](https://david-dm.org/jiansen/match-js)
+[![devDependency Status](https://david-dm.org/jiansen/match-js/dev-status.svg)](https://david-dm.org/mxstbr/jiansen/match-js#info=devDependencies)
 [![semantic-release][semantic-image]][semantic-url]
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
