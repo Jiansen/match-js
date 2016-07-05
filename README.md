@@ -1,6 +1,6 @@
 [![Build Status][build]][build-link]
 [![Dependency Status](https://david-dm.org/jiansen/match-js.svg)](https://david-dm.org/jiansen/match-js)
-[![devDependency Status](https://david-dm.org/jiansen/match-js/dev-status.svg)](https://david-dm.org/mxstbr/jiansen/match-js#info=devDependencies)
+[![devDependency Status](https://david-dm.org/jiansen/match-js/dev-status.svg)](https://david-dm.org/jiansen/match-js#info=devDependencies)
 [![npm monthly downloads](https://img.shields.io/npm/dm/match-js.svg?style=flat)](https://www.npmjs.com/package/match-js)
 [![current version](https://img.shields.io/npm/v/match-js.svg?style=flat)](https://www.npmjs.com/package/match-js)
 [![semantic-release][semantic-image]][semantic-url]
