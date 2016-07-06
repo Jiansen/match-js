@@ -97,11 +97,15 @@ const _ = {
     return null;
   }
 }
+const CASE = (...args) => args
 const otherwise = _
 const id = (x) => x
+
+
 export default {
   match,
   _,
-  otherwise,
+  CASE,
   id,
+  otherwise,
 }

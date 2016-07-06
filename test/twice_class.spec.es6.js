@@ -42,25 +42,25 @@ describe('Matching on class contructor Twice:', function () {
 
   it('10 should match Twice(x), where x is assigned to 5', () => {
       const m = match(10)(
-        [1, "ONE"],
-        [2, "TWO"],
+        [1, 'ONE'],
+        [2, 'TWO'],
         [Twice, (x) => x]
       )
       expect(m).to.be.equal(5);
   });
   it('10 should match Twice(5)', () => {
       const m = match(10)(
-        [1, "ONE"],
-        [2, "TWO"],
-        [new Twice(5), "Twice(5)"]
+        [1, 'ONE'],
+        [2, 'TWO'],
+        [new Twice(5), 'Twice(5)']
       )
-      expect(m).to.be.equal("Twice(5)");
+      expect(m).to.be.equal('Twice(5)');
   });
   it('Twice(5) should match Twice(x), where x is assigned to 5', () => {
       const twice5 = new Twice(5);
       const m = match(twice5)(
-        [1, "ONE"],
-        [2, "TWO"],
+        [1, 'ONE'],
+        [2, 'TWO'],
         [Twice, (x) => x]
       )
       expect(m).to.be.equal(5);
@@ -68,17 +68,17 @@ describe('Matching on class contructor Twice:', function () {
   it('Twice(5) should match new Twice(5), before match with Twice(x)', () => {
       const twice5 = new Twice(5);
       const m = match(twice5)(
-        [1, "ONE"],
-        [new Twice(5), "Twice(5)"],
+        [1, 'ONE'],
+        [new Twice(5), 'Twice(5)'],
         [Twice, (x) => x]
       )
-      expect(m).to.be.equal("Twice(5)");
+      expect(m).to.be.equal('Twice(5)');
   });
   it('Twice(5) should not match Twice(6), but Twice(x)', () => {
       const twice5 = new Twice(5);
       const m = match(twice5)(
-        [1, "ONE"],
-        [new Twice(6), "Twice(6)"],
+        [1, 'ONE'],
+        [new Twice(6), 'Twice(6)'],
         [Twice, (x) => x]
       )
       expect(m).to.be.equal(5);
@@ -86,10 +86,10 @@ describe('Matching on class contructor Twice:', function () {
   it('Twice(6) should match {value: 12}', () => {
       const twice6 = new Twice(6);
       const m = match(twice6)(
-        [1, "ONE"],
-        [{value: 12}, "Twice(6) matches {value:12}"],
+        [1, 'ONE'],
+        [{value: 12}, 'Twice(6) matches {value:12}'],
         [Twice, (x) => x]
       )
-      expect(m).to.be.equal("Twice(6) matches {value:12}");
+      expect(m).to.be.equal('Twice(6) matches {value:12}');
   });
 });

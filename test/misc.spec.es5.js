@@ -4,6 +4,7 @@ var match = matchJS.match;
 var _ = matchJS._;
 var id = matchJS.id;
 var otherwise = matchJS.otherwise;
+var CASE = matchJS.CASE;
 
 chai.expect();
 var expect = chai.expect;
@@ -30,7 +31,7 @@ describe('Miscellaneous useages', function() {
     var i = 3;
     var m = match(i)(
       [1, 'ONE'],
-      [2, 'TOW'],
+      [2, 'TWO'],
       [_, function(){ return '_ matches '+i; }]
     );
     expect(m).to.be.equal('_ matches 3');
@@ -39,7 +40,7 @@ describe('Miscellaneous useages', function() {
     var i = 3;
     var m = match(i)(
       [1, 'ONE'],
-      [2, 'TOW'],
+      [2, 'TWO'],
       [otherwise, function(){ return 'otherwise matches '+i; }]
     );
     expect(m).to.be.equal('otherwise matches 3');
@@ -49,10 +50,19 @@ describe('Miscellaneous useages', function() {
     var x = 10;
     var m = match(x)(
       [1, 'ONE'],
-      [2, 'TOW'],
+      [2, 'TWO'],
       [10, id]
     );
     expect(m).to.be.equal(x);
   });
 
+  it('CASE statements test', function() {
+    var i = 10;
+    var m = match(i)(
+      CASE(1, function(x,y,z){ return 'Match '+x+' '+y+' '+z; }, 2,3),
+      CASE(2, 'TWO'),
+      CASE(_, function(){ return '_ matches '+i; })
+    );
+    expect(m).to.be.equal('_ matches 10');
+  });
 });
