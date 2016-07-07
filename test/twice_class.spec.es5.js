@@ -16,7 +16,9 @@ object TwiceTest extends App {
 */
 
 var chai = require('chai');
-var match = require('../lib/match-js').match;
+var matchJS = require('../lib/match-js');
+var match = matchJS.match;
+var otherwise = matchJS.otherwise;
 
 chai.expect();
 var expect = chai.expect;
@@ -88,5 +90,13 @@ describe('Matching on class contructor Twice:', function() {
       [Twice, function(x) {return x;}]
     );
     expect(m).to.be.equal('Twice(6) matches {value:12}');
+  });
+  it('9 should not match Twice, but otherwise', function() {
+    var m = match(9)(
+      [1, 'ONE'],
+      [Twice, function(x) { return x; }],
+      [otherwise, '9 matches otherwise']
+    );
+    expect(m).to.be.equal('9 matches otherwise');
   });
 });

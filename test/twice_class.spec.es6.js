@@ -16,7 +16,7 @@ object TwiceTest extends App {
 */
 
 import chai from 'chai';
-import { match }from '../lib/match-js';
+import { match, otherwise }from '../lib/match-js';
 
 chai.expect();
 const expect = chai.expect;
@@ -91,5 +91,13 @@ describe('Matching on class contructor Twice:', function () {
         [Twice, (x) => x]
       )
       expect(m).to.be.equal('Twice(6) matches {value:12}');
+  });
+  it('9 should not match Twice, but otherwise', () => {
+      const m = match(9)(
+        [1, 'ONE'],
+        [Twice, (x) => x],
+        [otherwise, '9 matches otherwise']
+      )
+      expect(m).to.be.equal('9 matches otherwise');
   });
 });

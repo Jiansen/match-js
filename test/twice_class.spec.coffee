@@ -18,6 +18,7 @@ object TwiceTest extends App
 chai = require 'chai'
 matchJS = require '../lib/match-js'
 match = matchJS.match
+otherwise = matchJS.otherwise
 
 chai.expect()
 expect = chai.expect
@@ -88,3 +89,11 @@ describe 'Matching on class contructor Twice:', ->
         [Twice, (x) => x]
       )
       expect(m).to.be.equal 'Twice(6) matches value:12'
+
+  it '9 should not match Twice, but otherwise', ->
+      m = match(9)(
+        [1, 'ONE'],
+        [Twice, (x) => x],
+        [otherwise, '9 matches otherwise']
+      )
+      expect(m).to.be.equal '9 matches otherwise'

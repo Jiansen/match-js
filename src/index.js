@@ -1,3 +1,5 @@
+const isUndefined = (value) => typeof value === 'undefined'
+
 const evalMatchedPatternByStatmentsType = {
   'string': (_obj, value, _args) => value,
   'number': (_obj, value, _args) => value,
@@ -6,8 +8,11 @@ const evalMatchedPatternByStatmentsType = {
   'object': (_obj, value, _args) => value,
 }
 
-const evalMatchedPattern = (obj, statements, ...args) =>
-  evalMatchedPatternByStatmentsType[typeof statements](obj, statements, ...args)
+const evalMatchedPattern = (obj, statements, ...args) => {
+  if( !isUndefined(obj) )  {
+    return evalMatchedPatternByStatmentsType[typeof statements](obj, statements, ...args);
+  }
+}
 
 const primitivePatternHandler = (exp, [pattern, statements, ...args]) => {
   if(primitiveValueEqualTest(exp, pattern)) {
@@ -57,7 +62,7 @@ const handlerByPatternType = {
   'function': (exp, [pattern, statements, ...args]) => {
     if ('unapply' in pattern.prototype) {
       const extractObj = pattern.prototype.unapply(exp);
-      if (extractObj != undefined) {
+      if ( !isUndefined(extractObj) ) {
         return evalMatchedPattern(extractObj, statements, ...args);
       }
     }
@@ -84,9 +89,9 @@ const handlerByPatternType = {
 
 const match = exp => (...pattern_clauses) => {
   for (const [pattern, statements, ...args] of pattern_clauses) {
-    const optionPrimitiveResult = handlerByPatternType[typeof pattern](exp, [pattern, statements, ...args]);
-    if (optionPrimitiveResult != undefined) {
-      return optionPrimitiveResult;
+    const optionResult = handlerByPatternType[typeof pattern](exp, [pattern, statements, ...args]);
+    if (!isUndefined(optionResult)) {
+      return optionResult;
     }
   };
   return undefined;
