@@ -24,7 +24,7 @@ const primitivePatternHandler = (exp, [pattern, statements, ...args]) => {
 const primitiveValueEqualTest = (expression, pattern) => expression === pattern;
 const objectEqualTest = (expression, pattern) => {
   for (const property in pattern) {
-    if ( !matchTest(pattern[property], expression[property]) ) {
+    if ( !isUndefined(pattern[property]) && !matchTest(pattern[property], expression[property]) ) {
       return false
     }
   }
