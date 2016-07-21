@@ -46,6 +46,36 @@ const m = match(1)(
 console.log(m); // Integer ONE
 ```
 
+### Using Extractor Objects
+Ported from the [Scala Example](http://docs.scala-lang.org/tutorials/tour/extractor-objects.html)
+```
+class Twice {
+  constructor(x) {
+    this.value = x*2;
+    this.funny_prop = 'funny';
+  }
+  unapply(x) {
+    if (x instanceof Twice && x.value%2 ==0) {
+      return x.value / 2
+    }
+
+    if( x%2 ==0 ) {
+      return x/2;
+    }else{
+      return undefined;
+    }
+  }
+}
+
+const twice5 = new Twice(5);
+const m = match(twice5)(
+  [1, 'ONE'],
+  [new Twice(6), 'Twice(6)'],
+  [Twice, (x) => x]
+)
+console.log(m); // 5
+```
+
 ### More Examples
 See *.spec.es6.js files in the [test](./test) folder.
 
