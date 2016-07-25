@@ -14,6 +14,14 @@ describe('Miscellaneous useages', function () {
       )
       expect(m).to.be.equal('TEN');
   });
+  it('statements value could be undefined', () => {
+    const m = match('undefined')(
+      [1, 'ONE'],
+      ['undefined', undefined],
+      [2, 'TWO']
+    )
+    expect(m).to.be.equal(undefined)
+  });
   it('pass additional parameters to matched patial function', () => {
     const m = match(1)(
       [1, (x,y,z)=>{

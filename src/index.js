@@ -1,6 +1,7 @@
 const isUndefined = (value) => typeof value === 'undefined'
 
 const evalMatchedPatternByStatmentsType = {
+  'undefined': (_obj, value, _args) => undefined,
   'string': (_obj, value, _args) => value,
   'number': (_obj, value, _args) => value,
   'boolean': (_obj, value, _args) => value,

@@ -19,6 +19,14 @@ describe('Miscellaneous useages', function() {
     );
     expect(m).to.be.equal('TEN');
   });
+  it('statements value could be undefined', function() {
+    var m = match('undefined')(
+      [1, 'ONE'],
+      ['undefined', undefined],
+      [2, 'TWO']
+    );
+    expect(m).to.be.equal(undefined);
+  });
   it('pass additional parameters to matched patial function', function() {
     var m = match(1)(
       [1, function(x,y,z){

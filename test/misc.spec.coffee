@@ -17,6 +17,14 @@ describe 'Miscellaneous useages', ->
     )
     expect(m).to.be.equal 'TEN'
 
+  it 'statements value could be undefined', ->
+    m = match('undefined')(
+      [1, 'ONE'],
+      ['undefined', undefined],
+      [2, 'TWO']
+    )
+    expect(m).to.be.equal undefined
+
   it 'pass additional parameters to matched patial function', ->
     m = match(1)(
       [1, (x,y,z)->
